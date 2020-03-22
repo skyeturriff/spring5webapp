@@ -1,0 +1,47 @@
+
+<!-- This is the View we want to render for a list of Books. -->
+
+<!DOCTYPE html>
+
+<!-- HTML is a subset of XML. We add in the Thymeleaf namespace here.
+ We designated the tag "th" to reference the Thymeleaf namespace, so
+ that we can have access to Thymeleaf extensions in this XML document.
+ That is how Thymeleaf will work - through attributes out of that
+ namespace, which will tell Thymeleaf to do stuff. -->
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Framework Guru</title>
+</head>
+
+<body>
+
+<h1>Book List</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Publisher</th>
+    </tr>
+
+    <!-- Here we use a Thymeleaf "each" iterator. We grab the "books"
+     attribute from the Model (that was added by the Controller). So
+     we ask the Model to give the property "books", and this is how we
+     use Thymeleaf to say "I want an iterator over books". -->
+    <tr th:each="book : ${books}">
+
+        <!-- For each Book, Thymeleaf will render these elements. -->
+        <td th:text="${book.id}">123</td>
+        <td th:text="${book.title}">Spring in Action</td>
+        <td th:text="${book.publisher.name}">Wrox</td>
+
+    </tr>
+
+</table>
+
+</body>
+
+</html>
