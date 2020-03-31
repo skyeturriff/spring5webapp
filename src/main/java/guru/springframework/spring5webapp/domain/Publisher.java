@@ -29,7 +29,7 @@ public class Publisher {
      * Book records, to track the publisher. This will create a
      * foreign key relationship under the covers, so we don't need
      * any type of join table. It tells Hibernate that on Books,
-     * an Id will exist to reference back to the Publisher thw Book
+     * an Id will exist to reference back to the Publisher the Book
      * is mapped to.
      */
     @OneToMany
